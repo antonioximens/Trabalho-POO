@@ -12,10 +12,10 @@ public class Funcionario extends BaseParametro{
         public void setCargo(String cargo) {
             this.cargo = cargo;
         }
-        public double getSalrio() {
+        public double getSalario() {
             return salario;
         }
-        public void setSalrio(double salario) {
+        public void setSalario(double salario) {
             this.salario = salario;
         }
 
