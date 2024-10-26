@@ -9,6 +9,7 @@ public class FornecedorRepo extends BaseRepository<Fornecedor> {
 
     // criando o constructor 
     public FornecedorRepo(){
+        super();
         // instanciando db
         this.db = new FornecedorFakeDB();
         // criando uam ligação com fonteDeDados

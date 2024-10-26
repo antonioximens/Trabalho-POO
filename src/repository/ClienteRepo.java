@@ -8,6 +8,7 @@ public class ClienteRepo extends BaseRepository<Cliente>{
     private ClienteFakeDB db;
 
     public ClienteRepo(){
+        super();
         // garantindo que a lista seja criada
         this.db = new ClienteFakeDB();
 

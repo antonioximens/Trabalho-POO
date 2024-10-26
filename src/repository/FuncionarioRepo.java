@@ -10,6 +10,7 @@ public class FuncionarioRepo extends BaseRepository<Funcionario>{
 
     // gerando um constrcutor 
     public FuncionarioRepo(){
+        super();
         // instanciou a classe banco de dados
         this.db = new FuncionarioFakeDB();
 
