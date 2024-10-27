@@ -9,74 +9,72 @@ public class ClienteView extends BaseView {
 
     private ClienteService srv;
 
-    // condição de parada try.catch
-    //private boolean condicaoParada = true;
-
     public ClienteView(){
         super();
         this.srv = new ClienteService();
     }
     
-    // executando o tratamento de erro
-    //while(condicaoParada != false){
-        //menu
-    //}
 
-    // implementando os metodos do pai 
+        // implementando os metodos do pai 
     @Override
     public void ExibirMenu() {
-       // criando uma opcao
-       int op = 0;
-
-       // criando uma repetiçao para executar o menu
-       while(op != 9){
-
-            // passando a lista do menu e coloando o limpa console
-            Util.ClearConsole();
-            System.out.println("Classe Cliente: ");
-            System.out.println("Menu de Opções");
-            System.out.println("1- Listar");
-            System.out.println("2- Localizar");
-            System.out.println("3- Adicionar");
-            System.out.println("4- Atualizar");
-            System.out.println("5- Remover");
-            System.out.println("9- Sair");
+        // criando uma opcao
+        int op = 0;
             
-            // chamando a op para ser lida
-            op = this.scanner.nextInt();
-
-            // logo cria um switch case para olhar as opcoesss
-            switch (op) {
-                // opcao de listar as classes
-                case 1:
-                    // chamando com o this o metodo que esta no pai e implementado qui
-                    this.Listar();
-                    break;
-                case 2:
-                    // chamando com o this o metodo que esta no pai e implementado qui
-                    this.Localizar();
-                    break;
+        try {
+                
+            // criando uma repetiçao para executar o menu
+            while(op != 9){
+        
+                // passando a lista do menu e coloando o limpa console
+                Util.ClearConsole();
+                System.out.println("Classe Cliente: ");
+                System.out.println("Menu de Opções");
+                System.out.println("1- Listar");
+                System.out.println("2- Localizar");
+                System.out.println("3- Adicionar");
+                System.out.println("4- Atualizar");
+                System.out.println("5- Remover");
+                System.out.println("9- Sair");
+                    
+                // chamando a op para ser lida
+                op = this.scanner.nextInt();
+        
+                // logo cria um switch case para olhar as opcoesss
+                switch (op) {
+                    // opcao de listar as classes
+                    case 1:
+                        // chamando com o this o metodo que esta no pai e implementado qui
+                        this.Listar();
+                        break;
+                    case 2:
+                        // chamando com o this o metodo que esta no pai e implementado qui
+                        this.Localizar();
+                        break;
                     case 3:
-                    // chamando com o this o metodo que esta no pai e implementado qui
-                    this.Adicionar();
-                    break;
+                            // chamando com o this o metodo que esta no pai e implementado qui
+                        this.Adicionar();
+                        break;
                     case 4:
-                    // chamando com o this o metodo que esta no pai e implementado qui
-                    this.Atualizar();
-                    break;
+                        // chamando com o this o metodo que esta no pai e implementado qui
+                        this.Atualizar();
+                        break;
                     case 5:
-                    // chamndo com o this o metodo que esta no pai e implementado qui
-                    this.Remover();
-                    break;
+                        // chamndo com o this o metodo que esta no pai e implementado qui
+                        this.Remover();
+                        break;
                     case 9:
-                    System.out.println("Encerrando Sistema\nSaindo...");
-                    break;
-            
-                default:
-                System.out.println("Opção invalida!");
-                    break;
+                        System.out.println("Encerrando Sistema\nSaindo...");
+                        break;
+                    
+                    default:
+                        System.out.println("Opção invalida!");
+                        break;
+                    }
             }
-       }
+        } catch (Exception e) {
+                System.out.println("Ocooreu um erro: " + e.getMessage());
+        }
     }
 
     @Override
